@@ -4,14 +4,15 @@ import FactorialCalculationWebWorker from "./components/factorialCalculationsWeb
 
 const App = () => {
   return (
-    <>
-      <h1 className="text-center">Step 1. Factorial calculation</h1>
-      <div className="d-flex gap-5">
+    <div className="p-3">
+      <h1 className="text-center mb-3">Step 1. Factorial calculation. Via PostMessage</h1>
+      <div className="d-flex gap-5 mb-4">
         <FactorialCalculation />
         <FactorialCalculationWebWorker />
       </div>
 
-    </>
+      <h1 className="text-center mb-3">Step 2. Going through array with progress</h1>
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {Button, Form, Spinner} from "react-bootstrap";
+import {Button, ButtonGroup, Form, Spinner} from "react-bootstrap";
 
 const FactorialCalculationWebWorker: React.FC = () => {
   const [result, setResult] = useState<number>(0);
@@ -29,8 +29,13 @@ const FactorialCalculationWebWorker: React.FC = () => {
     worker.postMessage(value);
   }
 
+  const onCancel = () => {
+    worker.terminate();
+    setIsLoading(false);
+  }
+
   return (
-    <div className="p-3 w-25">
+    <div className="w-25">
       <h3>With Web Worker</h3>
       <Form onSubmit={onSubmit} className="mb-3">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -38,7 +43,10 @@ const FactorialCalculationWebWorker: React.FC = () => {
           <Form.Control required type="number" />
         </Form.Group>
 
-        <Button type="submit" disabled={isLoading}>Calculate factorial</Button>
+        <ButtonGroup>
+          <Button type="submit" disabled={isLoading}>Calculate factorial</Button>
+          <Button variant="danger" onClick={onCancel}>Cancel calculation</Button>
+        </ButtonGroup>
       </Form>
 
       {

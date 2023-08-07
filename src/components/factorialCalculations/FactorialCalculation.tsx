@@ -18,7 +18,7 @@ const FactorialCalculation: React.FC = () => {
   }
 
   return (
-    <div className="p-3 w-25">
+    <div className="w-25">
       <h3>Without Web Worker</h3>
       <Form onSubmit={onSubmit} className="mb-3">
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
