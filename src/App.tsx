@@ -2,6 +2,7 @@ import React from 'react';
 import FactorialCalculation from "./components/factorialCalculations/FactorialCalculation";
 import FactorialCalculationWebWorker from "./components/factorialCalculationsWebWorker/FactorialCalculationWebWorker";
 import ArrayBufferExample from "./components/arrayBufferExample/ArrayBufferExample";
+import DomHandlingExample from "./components/domHandlingExample/DomHandlingExample";
 
 const App = () => {
   return (
@@ -21,9 +22,14 @@ const App = () => {
       <hr />
 
       <h1 className="text-center mb-3">Step 4. Sending data via SharedArrayBuffer</h1>
+      {/*<SharedArrayBufferExample />*/}
       <hr />
 
       <h1 className="text-center mb-3">Step 5. DOM handling</h1>
+      <DomHandlingExample />
+      <hr />
+
+      <h1 className="text-center mb-3">Step 6. Broadcast Channel (copying data across tabs and webworkers)</h1>
       <hr />
     </div>
   );

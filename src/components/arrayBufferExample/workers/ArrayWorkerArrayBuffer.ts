@@ -16,6 +16,7 @@ self.addEventListener('message', (e) => {
 
   inputArr.set(result.inputArr);
 
+  // @ts-ignore
   self.postMessage({average: result.average, inputArr: inputArr.buffer}, [inputArr.buffer]);
 })
 
